@@ -1,0 +1,10 @@
+<base-event-form
+  [title]="title"
+  [description]="description"
+  [place]="place"
+  (baseSubmit)="onBaseSubmit($event)"
+>
+  <label>Participants Number:<br>
+    <input [(ngModel)]="participantCount" name="participantCount" type="number" min="1" required />
+  </label>
+</base-event-form>

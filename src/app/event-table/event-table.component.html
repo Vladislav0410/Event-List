@@ -1,0 +1,27 @@
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th>Type</th>
+        <th>Participants Number</th>
+        <th>Genre</th>
+        <th>&nbsp;&nbsp;&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of events">
+        <td>{{e.title}}</td>
+        <td>{{e.description}}</td>
+        <td>{{e.place}}</td>
+        <td>{{e.type | titlecase}}</td>
+        <td>{{e.type === 'sport' ? e.participantCount : ''}}</td>
+        <td>{{e.type === 'music' ? e.genre : ''}}</td>
+        <td>
+          <button type="button" (click)="edit.emit(e)">✎</button>
+          <button type="button" (click)="remove.emit(e.id)">🗑</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

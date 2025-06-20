@@ -1,0 +1,35 @@
+<h2>Events list</h2>
+<event-table
+  [events]="store.events()"
+  (edit)="startEdit($event)"
+  (remove)="onDelete($event)">
+</event-table>
+
+<hr>
+<h3 *ngIf="!editing()">New Event</h3>
+<h3 *ngIf="editing()">Update Event</h3>
+<label>
+  Type:
+  <select [(ngModel)]="eventType" [disabled]="editing()">
+    <option value="sport">Sport</option>
+    <option value="music">Music</option>
+  </select>
+</label>
+<ng-container [ngSwitch]="typeForForm()">
+  <sport-event-form
+    *ngSwitchCase="'sport'"
+    [title]="current().title"
+    [description]="current().description"
+    [place]="current().place"
+    [participantCount]="current().participantCount"
+    (newData)="saveSport($event)">
+  </sport-event-form>
+  <music-event-form
+    *ngSwitchCase="'music'"
+    [title]="current().title"
+    [description]="current().description"
+    [place]="current().place"
+    [genre]="current().genre"
+    (newData)="saveMusic($event)">
+  </music-event-form>
+</ng-container>

@@ -1,0 +1,13 @@
+<form (ngSubmit)="submit()">
+    <label>Name:<br>
+      <input [(ngModel)]="title" name="title" required />
+    </label>
+    <label>Description:<br>
+      <input [(ngModel)]="description" name="description" required />
+    </label>
+    <label>Location:<br>
+      <input [(ngModel)]="place" name="place" required />
+    </label>
+    <ng-content></ng-content>
+    <button type="submit">Save</button>
+  </form>

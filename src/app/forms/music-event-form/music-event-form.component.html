@@ -1,0 +1,10 @@
+<base-event-form
+  [title]="title"
+  [description]="description"
+  [place]="place"
+  (baseSubmit)="onBaseSubmit($event)"
+>
+  <label>Genre:<br>
+    <input [(ngModel)]="genre" name="genre" required />
+  </label>
+</base-event-form>
