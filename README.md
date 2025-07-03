@@ -1,59 +1,48 @@
-# EventsList
+The task is estimated to take up to 4 hours of work for a mid-level developer.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+You are required to develop a small event management application. The task should demonstrate your knowledge of working with Angular components, using Angular Signals, and approaches to component architecture—either through inheritance or structural composition.
+Inheritance can be replaced with structural composition (e.g., a shared form component + ng-container).
+No backend implementation is needed—data can be stored in memory.
+All components must be standalone.
+For styling and UI convenience, the use of PrimeNG is allowed.
 
-## Development server
+Requirements:
+Develop a small application for managing a list of events. The user should be able to:
 
-To start a local development server, run:
+View the list of events.
 
-```bash
-ng serve
-```
+Add new events.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Edit existing events.
 
-## Code scaffolding
+Delete events.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Detailed Specifications:
+Event List:
+○ Each event contains: name, description, location, and event type.
+○ The event list should be displayed in a table format.
 
-```bash
-ng generate component component-name
-```
+Adding/Editing Events:
+○ A form for adding and editing events.
+○ Use component inheritance:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The base form component (BaseEventFormComponent) should contain common fields: name, description, and location.
 
-```bash
-ng generate --help
-```
+Create two derived components:
 
-## Building
+SportEventFormComponent: Adds a "Number of Participants" field.
 
-To build the project run:
+MusicEventFormComponent: Adds a "Music Genre" field.
 
-```bash
-ng build
-```
+Deleting Events:
+○ The user should be able to delete events from the list.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Component Inheritance:
+○ Create a base component BaseEventFormComponent implementing common form logic.
+○ Create two derived components: SportEventFormComponent and MusicEventFormComponent, which add their respective fields.
 
-## Running unit tests
+Signals:
+○ Use Angular Signals to manage the application state (e.g., storing and updating the event list).
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Standalone Components:
+○ All components must be standalone
